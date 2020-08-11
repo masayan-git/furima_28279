@@ -30,7 +30,7 @@
 | price         | integer        | null: false                    |
 | name          | string         | null: false                    |
 | overview      | text           | null: false                    |
-| buyer         | integer        | null: false, foreign_key: true |
+| buyer         | references     | null: false, foreign_key: true |
 | category      | references     | null: false                    |
 | status        | references     | null: false                    |
 | delivery_fee  | references     | null: false                    |
