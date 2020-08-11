@@ -31,11 +31,11 @@
 | name          | string         | null: false                    |
 | overview      | text           | null: false                    |
 | buyer         | references     | null: false, foreign_key: true |
-| category      | references     | null: false                    |
-| status        | references     | null: false                    |
-| delivery_fee  | references     | null: false                    |
-| area          | references     | null: false                    |
-| shipping      | references     | null: false                    |
+| category      | integer        | null: false                    |
+| status        | integer        | null: false                    |
+| delivery_fee  | integer        | null: false                    |
+| area          | integer        | null: false                    |
+| shipping      | integer        | null: false                    |
 
 ### Association
 
@@ -60,7 +60,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
-| prefectures    | references | null: false                    |
+| prefectures    | integer    | null: false                    |
 | municipalities | string     | null: false                    |
 | house_number   | string     | null: false                    |
 | building       | string     |                                |
