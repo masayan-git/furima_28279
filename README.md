@@ -23,14 +23,19 @@
 
 ## items テーブル
 
-| Column        | Type    | Options                        |
-| ------------- | ------- | ------------------------------ |
-| user          | integer | null: false, foreign_key: true |
-| image         | text    | null: false                    |
-| price         | integer | null: false                    |
-| name          | string  | null: false                    |
-| overview      | text    | null: false                    |
-| buyer         | integer | null: false, foreign_key: true |
+| Column        | Type           | Options                        |
+| ------------- | -------------- | ------------------------------ |
+| user          | references     | null: false, foreign_key: true |
+| image         | text           | null: false                    |
+| price         | integer        | null: false                    |
+| name          | string         | null: false                    |
+| overview      | text           | null: false                    |
+| buyer         | integer        | null: false, foreign_key: true |
+| category      | references     | null: false                    |
+| status        | references     | null: false                    |
+| delivery_fee  | references     | null: false                    |
+| area          | references     | null: false                    |
+| shipping      | references     | null: false                    |
 
 ### Association
 
@@ -39,10 +44,10 @@
 
 ## buyers テーブル
 
-| Column            | Type     | Options                        |
-| ----------------- | -------  | ------------------------------ |
-| user              | integer  | null: false, foreign_key: true |
-| item              | integer  | null: false, foreign_key: true |
+| Column            | Type        | Options                        |
+| ----------------- | ----------- | ------------------------------ |
+| user              | references  | null: false, foreign_key: true |
+| item              | references  | null: false, foreign_key: true |
 
 ### Association
 
@@ -52,15 +57,15 @@
 
 ## buyer_address
 
-| Column         | Type    | Options                        |
-| -------------- | ------- | ------------------------------ |
-| postal_code    | string  | null: false                    |
-| prefectures    | string  | null: false                    |
-| municipalities | string  | null: false                    |
-| house_number   | string  | null: false                    |
-| building       | string  |                                |
-| phone_number   | string  | null: false                    |
-| buyer          | integer | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_code    | string     | null: false                    |
+| prefectures    | references | null: false                    |
+| municipalities | string     | null: false                    |
+| house_number   | string     | null: false                    |
+| building       | string     |                                |
+| phone_number   | string     | null: false                    |
+| buyer          | references | null: false, foreign_key: true |
 
 ### Association
 
