@@ -33,6 +33,7 @@
 | item_price    | integer | null: false                    |
 | item_name     | string  | null: false                    |
 | item_overview | string  | null: false                    |
+| buyer         | integer | null: false, foreign_key: true |
 
 ### Association
 
