@@ -3,19 +3,21 @@
 
 ## users テーブル
 
-| Column     | Type   | Options                   |
-| ---------- | ------ | ------------------------- |
-| nickname   | string | null: false               |
-| email      | string | null: false, unique: true |
-| password   | string | null: false               |
-| first_name | string | null: false               |
-| last_name  | string | null: false               |
-| birthday   | string | null: false               |
+| Column              | Type   | Options                   |
+| ------------------- | ------ | ------------------------- |
+| nickname            | string | null: false               |
+| email               | string | null: false, unique: true |
+| password            | string | null: false               |
+| first_name          | string | null: false               |
+| last_name           | string | null: false               |
+| first_name_reading  | string | null: false               |
+| last_name_reading   | string | null: false               |
+| birthday            | date   | null: false               |
 
 ### Association
 
 - has_many :items
-- has_one :buyer
+- has_many :buyer
 
 
 
@@ -24,15 +26,10 @@
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
 | user          | integer | null: false, foreign_key: true |
-| category      | string  | null: false                    |
-| status        | string  | null: false                    |
-| delivery_fee  | string  | null: false                    |
-| area          | string  | null: false                    |
-| shipping      | string  | null: false                    |
-| item_image    | text    | null: false                    |
-| item_price    | integer | null: false                    |
-| item_name     | string  | null: false                    |
-| item_overview | string  | null: false                    |
+| image         | text    | null: false                    |
+| price         | integer | null: false                    |
+| name          | string  | null: false                    |
+| overview      | text    | null: false                    |
 | buyer         | integer | null: false, foreign_key: true |
 
 ### Association
@@ -46,7 +43,6 @@
 | ----------------- | -------  | ------------------------------ |
 | user              | integer  | null: false, foreign_key: true |
 | item              | integer  | null: false, foreign_key: true |
-| buyer_address     | integer  | null: false, foreign_key: true |
 
 ### Association
 
@@ -58,12 +54,12 @@
 
 | Column         | Type    | Options                        |
 | -------------- | ------- | ------------------------------ |
-| postal_code    | integer | null: false                    |
+| postal_code    | string  | null: false                    |
 | prefectures    | string  | null: false                    |
 | municipalities | string  | null: false                    |
 | house_number   | string  | null: false                    |
-| building       | string  | null: false                    |
-| phone_number   | integer | null: false                    |
+| building       | string  |                                |
+| phone_number   | string  | null: false                    |
 | buyer          | integer | null: false, foreign_key: true |
 
 ### Association
