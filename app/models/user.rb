@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :first_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :last_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }
-    validates :password, format: { with: /\A[a-z0-9]+\z/ }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
     validates :nickname
     validates :birthday
   end
