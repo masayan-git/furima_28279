@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name { '商品名'}
-    overview { '商品説明'}
+    name { '商品名' }
+    overview { '商品説明' }
     category { 1 }
     status { 1 }
     delivery_fee { 1 }
