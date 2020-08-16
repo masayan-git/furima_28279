@@ -5,7 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+# config.i18.default_locale = :ja
 module Furima28279
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
