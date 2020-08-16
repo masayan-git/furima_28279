@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
       @item.image = fixture_file_upload('public/images/test_image.png')
     end
     describe '商品の出品登録' do
-      context '出品登録ができる場合'do
+      context '出品登録ができる場合' do
         it '全て正しく入力されていれば出品登録できる' do
           expect(@item).to be_valid
         end
@@ -34,7 +34,7 @@ RSpec.describe Item, type: :model do
         it '商品名が入力されていても40文字を超えると登録できないこと' do
           @item.name = Faker::Lorem.characters(number: 41)
           @item.valid?
-          expect(@item.errors.full_messages).to include("Name minimum is 40characters")
+          expect(@item.errors.full_messages).to include('Name minimum is 40characters')
         end
 
         it '商品説明がなければ出品登録できないこと' do
@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
         it '商品説明が入力されていても1000文字を超えていれば登録できないこと' do
           @item.overview = Faker::Lorem.characters(number: 1001)
           @item.valid?
-          expect(@item.errors.full_messages).to include("Overview minimum is 1000characters")
+          expect(@item.errors.full_messages).to include('Overview minimum is 1000characters')
         end
         it 'カテゴリーの情報がなければ出品登録できないこと' do
           @item.category = nil
