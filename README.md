@@ -37,6 +37,7 @@
 | delivery_fee  | integer        | null: false                    |
 | area          | integer        | null: false                    |
 | shipping      | integer        | null: false                    |
+| sale_flag     | boolean        | null: false, default: false    |
 
 ### Association
 
