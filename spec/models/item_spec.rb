@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# bundle exec rspec spec/models/item_spec.rb
 RSpec.describe Item, type: :model do
   describe '#create' do
     before do
@@ -49,7 +49,7 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include('Overview minimum is 1000characters')
         end
         it 'カテゴリーの情報がなければ出品登録できないこと' do
-          @item.category = nil
+          @item.category_id = nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Category can't be blank")
         end
