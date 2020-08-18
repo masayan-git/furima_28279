@@ -1,17 +1,17 @@
 <%= render "shared/header" %>
 <div class='main'>
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
-  <%= render "title_contens"%>
+  <%= render "items/index/title_contens"%>
   <%# FURIMAが選ばれる3つの理由部分 %>
-  <%= render "select_reason"%>
+  <%= render "items/index/select_reason"%>
   <%# 画面中央の「会員数日本一位」帯部分 %>
-  <%= render "ad_contents"%>
+  <%= render "items/index/ad_contents"%>
   <%# FURIMAの特徴 %>
-  <%= render "feature_contents"%>
+  <%= render "items/index/feature_contents"%>
   <%# 商品一覧 %>
-  <%= render partial: "item_contens", locals: {item: @item } %>
+  <%= render partial: "items/index/item_contens", locals: {item: @item } %>
 </div>
 <%# 出品ボタン %>
-<%= render "purchase_btn"%>
+<%= render "items/index/purchase_btn"%>
 <%# フッター %>
 <%= render "shared/footer" %>
