@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function (){
+document.addEventListener("DOMContentLoaded", function (){
   const prices = document.getElementById("item-price");
   const fee = document.getElementById("add-tax-price");
   const profit = document.getElementById("profit")

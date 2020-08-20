@@ -7,8 +7,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :status
 
   belongs_to :user
+  has_one :transactions, class_name:"Transaction"
   has_one_attached :image
   validate :image_presence
+
 
   with_options presence: true do
     validates :name, length: { maximum: 40, too_long: 'minimum is %{count}characters' }

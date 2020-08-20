@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one :transactions, class_name:"Transaction"
   has_many :items
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

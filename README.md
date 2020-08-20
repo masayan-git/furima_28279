@@ -44,7 +44,7 @@
 - belongs_to :user
 - has_one :buyer
 
-## buyers テーブル
+## transactions テーブル
 
 | Column            | Type        | Options                        |
 | ----------------- | ----------- | ------------------------------ |
@@ -57,17 +57,17 @@
 - belongs_to :user
 - belongs_to :item
 
-## buyer_address
+## orderers
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
-| prefectures    | integer    | null: false                    |
+| area_id        | integer    | null: false                    |
 | municipalities | string     | null: false                    |
 | house_number   | string     | null: false                    |
 | building       | string     |                                |
 | phone_number   | string     | null: false                    |
-| buyer          | references | null: false, foreign_key: true |
+| transaction    | references | null: false, foreign_key: true |
 
 ### Association
 
