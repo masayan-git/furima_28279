@@ -1,5 +1,3 @@
 class Transaction < ApplicationRecord
-  has_one :orderer
-  belongs_to :item
-  belongs_to :user
+  # 使用していません
 end

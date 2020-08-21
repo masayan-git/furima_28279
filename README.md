@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :buyer
+- has_many :procedure
 
 
 
@@ -42,9 +42,9 @@
 ### Association
 
 - belongs_to :user
-- has_one :buyer
+- has_one :procedure
 
-## transactions テーブル
+## procedures テーブル
 
 | Column            | Type        | Options                        |
 | ----------------- | ----------- | ------------------------------ |
@@ -53,11 +53,11 @@
 
 ### Association
 
-- has_one :buyer_address
+- has_one :address
 - belongs_to :user
 - belongs_to :item
 
-## orderers
+## addresses
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
@@ -67,8 +67,8 @@
 | house_number   | string     | null: false                    |
 | building       | string     |                                |
 | phone_number   | string     | null: false                    |
-| transaction    | references | null: false, foreign_key: true |
+| procedure    | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :procedure
