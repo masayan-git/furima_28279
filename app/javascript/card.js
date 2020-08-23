@@ -15,7 +15,7 @@ const pay = () => {
       exp_month: formData.get("procedure_address[exe_month]"),
       exp_year: `20${formData.get("procedure_address[exp_year]")}`,
     };
-    console.log(card)
+    
     Payjp.createToken(card, (status, response) => {
       console.log(response)
       console.log(status)
@@ -35,8 +35,6 @@ const pay = () => {
         document.getElementById("charge-form").reset();
 
       } else {
-        console.log("hoge3")
-
       }
     });
   });

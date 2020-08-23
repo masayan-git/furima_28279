@@ -13,7 +13,7 @@ class ProceduresController < ApplicationController
       @procedure.save
       redirect_to root_path
     else
-      render 'index'
+      redirect_to action: :index
     end
   end
 
