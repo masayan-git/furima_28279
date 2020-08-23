@@ -8,6 +8,8 @@ FactoryBot.define do
     area_id { 1 }
     shipping_id { 1 }
     price { 300 }
+    image {Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/flag.png'))}
     association :user
+    
   end
 end

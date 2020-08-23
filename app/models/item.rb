@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :status
 
   belongs_to :user
+  has_one :procedure
   has_one_attached :image
   validate :image_presence
 

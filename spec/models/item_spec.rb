@@ -1,5 +1,6 @@
 require 'rails_helper'
 # bundle exec rspec spec/models/item_spec.rb
+
 RSpec.describe Item, type: :model do
   describe '#create' do
     before do
