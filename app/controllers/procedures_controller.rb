@@ -1,4 +1,5 @@
 class ProceduresController < ApplicationController
+  
   def index
     @item = Item.find(params[:item_id])
     redirect_to root_path if request.referer.nil?
