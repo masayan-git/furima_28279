@@ -61,28 +61,6 @@ ActiveRecord::Schema.define(version: 2020_08_20_152030) do
     t.integer "category_id"
   end
 
-  create_table "orderers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code", null: false
-    t.string "municipalities", null: false
-    t.integer "area_id", null: false
-    t.string "house_number", null: false
-    t.string "building"
-    t.string "phone_number", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "procedure_id", null: false
-    t.index ["procedure_id"], name: "index_orderers_on_procedure_id"
-  end
-
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_orders_on_item_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
   create_table "procedures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
@@ -90,15 +68,6 @@ ActiveRecord::Schema.define(version: 2020_08_20_152030) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_procedures_on_item_id"
     t.index ["user_id"], name: "index_procedures_on_user_id"
-  end
-
-  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_transactions_on_item_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,17 +84,14 @@ ActiveRecord::Schema.define(version: 2020_08_20_152030) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "item_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["item_id"], name: "index_users_on_item_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "procedures"
-  add_foreign_key "orderers", "transactions", column: "procedure_id"
-  add_foreign_key "orders", "items"
-  add_foreign_key "orders", "users"
   add_foreign_key "procedures", "items"
   add_foreign_key "procedures", "users"
-  add_foreign_key "transactions", "items"
-  add_foreign_key "transactions", "users"
 end
